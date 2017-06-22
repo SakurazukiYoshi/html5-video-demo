@@ -1,0 +1,43 @@
+
+.xy-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform:translate(-50%,-50%); 	/* IE 9 */
+  -moz-transform:translate(-50%,-50%);	/* Firefox */
+  -webkit-transform:translate(-50%,-50%);/* Safari 和 Chrome */
+  -o-transform:translate(-50%,-50%); 	/* Opera */
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.ad_video{
+  margin:  0 auto;
+  width: 358px;
+  height: 195px;
+  position: relative;
+  video{
+    height: 195px;
+  }
+  .video-title{
+    width: 358px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #ffffff;
+    background-color: rgba(255,255,255,0.3);
+    text-align: center;
+    line-height: 20px;
+  }
+  .play{
+    width: 42px;
+    height: 42px;
+    background: url(../images/icon_03.png) 0 0 no-repeat;
+  }
+}
+.none{
+  display: none;
+}
+

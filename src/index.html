@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="plugins/location/iconfont.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="advertisement">
+      <div class="ad_video">
+          <video class="top-small-video" >
+              <source src="//ossweb-img.qq.com/images/lol/v2/banner/small-v6.webm" type="video/webm">
+              <source src="//ossweb-img.qq.com/images/lol/v2/banner/small-v6.mp4" type="video/mp4">
+          </video>
+          <p class="play xy-center" id="play"></p>
+          <p class="video-title">内容商助力 不是巨头不聚头</p>
+      </div>
+  </div>
+  <script src="plugins/zepto.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+      $(function(){
+          var flag=0;  //判断播放状态  0暂停  1播放
+          var $play=$("#play");    //播放图标
+          var $video=$play.prev();  //视频
+
+          /*================点击播放与暂停===========================*/
+          $video.click(function(){
+              control();
+          });
+          $play.click(function(){
+              control();
+          });
+          /*================播放结束显示图标===========================*/
+          $video.get(0).addEventListener('ended', function () {
+              $play.show();
+              flag=0;
+          }, false);
+          function control(){
+              if(flag==0){
+                  $video.get(0).play();
+                  $play.addClass("none");
+                  flag=1;
+              }else {
+                  $video.get(0).pause();
+                  $play.removeClass("none");
+                  flag=0;
+              }
+          }
+      });
+
+
+  </script>
+  </body>
+</html>
